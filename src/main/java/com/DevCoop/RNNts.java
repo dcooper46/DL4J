@@ -1,4 +1,4 @@
-package com.PublicisMedia;
+package com.DevCoop;
 
 import org.datavec.api.records.reader.RecordReader;
 import org.datavec.api.records.reader.impl.csv.CSVRecordReader;
@@ -37,7 +37,7 @@ import java.util.Random;
 /**
  * Created by dancoope on 10/5/2016.
  */
-public class DLtest
+public class RNNts
 {
     private static Logger log = LoggerFactory.getLogger(DLtest.class);
 
@@ -68,27 +68,6 @@ public class DLtest
             cpm_values.add(i);
         }
         cpm_list.addAll(cpm_values);
-
-/*        int nlSkip = 1;
-        String delim = ",";
-        SequenceRecordReader recordReader = new CSVSequenceRecordReader(nlSkip, delim);
-        recordReader.initialize(new FileSplit(new ClassPathResource
-                        ("dbm_REI_alldays_cpm.csv").getFile()));
-
-        DataSetIterator iterator = new SequenceRecordReaderDataSetIterator
-                (recordReader, 100, -1, 1, true);
-
-        DataSet allData = iterator.next();
-        SplitTestAndTrain testAndTrain = allData.splitTestAndTrain(0.65);
-
-        DataSet train = testAndTrain.getTrain();
-        DataSet test = testAndTrain.getTest();
-
-        DataNormalization normalizer = new NormalizerStandardize();
-        normalizer.fit(train);
-        normalizer.transform(train);
-        normalizer.transform(test);
-*/
 
         NeuralNetConfiguration.Builder builder = new NeuralNetConfiguration
                 .Builder();
